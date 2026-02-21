@@ -1,0 +1,21 @@
+projeto_prod:
+  target: dev
+  outputs:
+    dev:
+      dbname: dw_cursodbt
+      host: "{{ env_var('DB_HOST') }}"
+      pass: "{{ env_var('PG_DBT_PASS') }}"
+      port: "{{ env_var('DB_PORT') | int }}"
+      schema: "{{ env_var('DB_SCHEMA_DEV') }}"
+      threads: "{{ env_var('DB_THREADS') | int }}"
+      type: postgres
+      user: "{{ env_var('PG_DBT_USER') }}"
+    prod:
+      dbname: dw_cursodbt
+      host: "{{ env_var('DB_HOST') }}"
+      pass: "{{ env_var('PG_DBT_PASS') }}"
+      port: "{{ env_var('DB_PORT') | int }}"
+      schema: "{{ env_var('DB_SCHEMA_PROD') }}"
+      threads: "{{ env_var('DB_THREADS') | int }}"
+      type: postgres
+      user: "{{ env_var('PG_DBT_USER') }}"
